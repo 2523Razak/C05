@@ -1,33 +1,33 @@
 #include <stdio.h>
 
-void rotate_left(int arr[], int size) {
-    // Sauvegarder le premier élément
-    int first = arr[0];
-    
-    // Décaler tous les éléments vers la gauche
-    for (int i = 0; i < size - 1; i++) {
-        arr[i] = arr[i + 1];
-    }
-    
-    // Mettre le premier élément à la fin
-    arr[size - 1] = first;
-}
-
 int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int taille;  // Pour stocker la taille du tableau
     
-    printf("Tableau avant rotation : ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+    scanf("%d", &taille);  // Lire la taille du tableau
+    
+    int tableau[taille];  // Créer le tableau
+    
+    // Lire les éléments du tableau
+    for (int i = 0; i < taille; i++) {
+        scanf("%d", &tableau[i]);
     }
-    printf("\n");
     
-    rotate_left(arr, size);
+    // Rotation à gauche
+    if (taille > 0) {
+        int premier = tableau[0];  // Garder le premier élément
+        
+        // Décaler tous les éléments vers la gauche
+        for (int i = 0; i < taille - 1; i++) {
+            tableau[i] = tableau[i + 1];
+        }
+        
+        tableau[taille - 1] = premier;  // Remettre le premier à la fin
+    }
     
+    // Afficher le résultat comme demandé
     printf("Tableau après rotation : ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+    for (int i = 0; i < taille; i++) {
+        printf("%d ", tableau[i]);
     }
     printf("\n");
     
