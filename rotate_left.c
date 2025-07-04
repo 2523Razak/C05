@@ -13,7 +13,6 @@ void rotate_left(int arr[], int size) {
 int main() {
     int size;
 
-    printf("Entrez la taille du tableau : ");
     scanf("%d", &size);
 
     if (size <= 0) {
@@ -22,7 +21,6 @@ int main() {
     }
 
     int arr[size];
-    printf("Entrez les %d éléments du tableau : ", size);
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
     }
